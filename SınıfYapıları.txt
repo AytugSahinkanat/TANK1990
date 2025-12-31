@@ -1,0 +1,38 @@
+# Sınıf Yapısı ve OOP İlkeleri Uygulaması
+
+## Ana Sınıflar
+1. **Game**: Oyun ana döngüsünü, çizim, giriş işlemlerini ve oyun mantığını yöneten sınıf.
+2. **GameObject**: Tüm oyun nesneleri için temel arayüz, Polymorphism ilkesinin uygulanmasını sağlar.
+3. **Player**: Oyuncu karakteri ve kontrol mekanizmasından sorumlu sınıf.
+4. **Weapon**: Silah davranışları için soyut üst sınıf, Template Method pattern kullanımı.
+5. **Projectile**: Silah ve zombilerin fırlattığı mermi ve asit gibi nesnelerin temel sınıfı.
+6. **Zombie**: Tüm zombi tipleri için soyut temel sınıf.
+7. **Pickup**: Oyun içi toplanabilir nesnelerin soyut temel sınıfı.
+8. **Effect**: Görsel efektlerin temel sınıfı.
+9. **GameState**: Oyun durumunun kaydetme/yükleme işlemlerini sağlayan sınıf.
+
+## OOP İlkelerinin Uygulanması
+1. **Encapsulation (Kapsülleme)**: Tüm sınıflarda private veri alanları ve gerekli getter/setter metotları kullanılmıştır.
+2. **Inheritance (Kalıtım)**: Weapon, Projectile, Zombie ve Pickup gibi sınıflarda alt sınıflar oluşturularak ortak davranışlar ve özellikler üst sınıflarda tanımlanmıştır.
+3. **Polymorphism (Çok Biçimlilik)**: GameObject arayüzü sayesinde farklı tipteki nesneler (Player, Zombie, Projectile, Pickup) aynı şekilde işlenebilmektedir.
+4. **Abstraction (Soyutlama)**: Weapon, Zombie, Projectile, Effect ve Pickup sınıfları soyut sınıflar olarak tanımlanmış, böylece temel davranışlar soyutlanmıştır.
+
+## Spesifik Sınıf Hiyerarşisi
+1. **Weapon Hiyerarşisi**:
+   - Pistol: Temel silah, sınırsız yedek mermi
+   - AssaultRifle: Hızlı ateş eden, saçılmalı silah
+   - Shotgun: Geniş açılı çoklu mermi
+   - SniperRifle: Delinme özelliği olan mermi
+   - RocketLauncher: Patlama etkisi yaratan roket
+
+2. **Zombie Hiyerarşisi**:
+   - BasicZombie: Standart zombi
+   - CrawlerZombie: Hızlı ve zıplayan zombi
+   - TankZombie: Yavaş ama dayanıklı zombi
+   - AcidZombie: Asit tükürebilen ve ölünce patlayan zombi
+
+3. **Projectile Hiyerarşisi**:
+   - BasicProjectile: Standart mermi
+   - SniperProjectile: Delici mermi
+   - RocketProjectile: Patlayıcı roket
+   - AcidProjectile: Asit zombisinin tükürüğü
